@@ -61,6 +61,10 @@ stdio.h
 -
 opencv2/opencv.hpp
 -
+cv.h
+-
+highgui.h
+-
 glog/logging.h
 -
 iostream
@@ -75,6 +79,20 @@ string
 /home/eric/CLionProjects/readme/./rect/read.h
 str/segmentation.h
 /home/eric/CLionProjects/readme/str/segmentation.h
+pic/measure.h
+/home/eric/CLionProjects/readme/pic/measure.h
+
+/home/eric/CLionProjects/readme/pic/measure.h
+stdio.h
+-
+opencv2/opencv.hpp
+-
+cv.h
+-
+highgui.h
+-
+string
+-
 
 /home/eric/CLionProjects/readme/str/segmentation.h
 string
@@ -120,9 +138,27 @@ glog/vlog_is_on.h
 glog/log_severity.h
 /usr/local/include/glog/glog/log_severity.h
 
+/usr/local/include/opencv/cv.h
+opencv2/core/core_c.h
+/usr/local/include/opencv/opencv2/core/core_c.h
+opencv2/imgproc/imgproc_c.h
+/usr/local/include/opencv/opencv2/imgproc/imgproc_c.h
+opencv2/photo/photo_c.h
+/usr/local/include/opencv/opencv2/photo/photo_c.h
+opencv2/video/tracking_c.h
+/usr/local/include/opencv/opencv2/video/tracking_c.h
+opencv2/objdetect/objdetect_c.h
+/usr/local/include/opencv/opencv2/objdetect/objdetect_c.h
+
 /usr/local/include/opencv/cxcore.h
 opencv2/core/core_c.h
 /usr/local/include/opencv/opencv2/core/core_c.h
+
+/usr/local/include/opencv/highgui.h
+opencv2/core/core_c.h
+/usr/local/include/opencv/opencv2/core/core_c.h
+opencv2/highgui/highgui_c.h
+/usr/local/include/opencv/opencv2/highgui/highgui_c.h
 
 /usr/local/include/opencv2/calib3d.hpp
 opencv2/core.hpp

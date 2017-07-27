@@ -6,11 +6,14 @@ CMakeFiles/readme.dir/main.cpp.o
  /home/eric/CLionProjects/readme/./rect/read.h
  /home/eric/CLionProjects/readme/./rect/util.h
  /home/eric/CLionProjects/readme/main.cpp
+ /home/eric/CLionProjects/readme/pic/measure.h
  /home/eric/CLionProjects/readme/str/segmentation.h
  /usr/local/include/glog/log_severity.h
  /usr/local/include/glog/logging.h
  /usr/local/include/glog/vlog_is_on.h
+ /usr/local/include/opencv/cv.h
  /usr/local/include/opencv/cxcore.h
+ /usr/local/include/opencv/highgui.h
  /usr/local/include/opencv2/calib3d.hpp
  /usr/local/include/opencv2/calib3d/calib3d_c.h
  /usr/local/include/opencv2/core.hpp

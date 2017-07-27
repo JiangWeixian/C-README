@@ -1,0 +1,5 @@
+Log file created at: 2017/07/27 10:56:38
+Running on machine: eric-PC
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0727 10:56:38.713914 18221 main.cpp:120] 1080
+I0727 10:56:38.715350 18221 main.cpp:121] 3

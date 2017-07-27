@@ -5,11 +5,14 @@ CMakeFiles/readme.dir/main.cpp.o: ./rect/calculate.h
 CMakeFiles/readme.dir/main.cpp.o: ./rect/read.h
 CMakeFiles/readme.dir/main.cpp.o: ./rect/util.h
 CMakeFiles/readme.dir/main.cpp.o: main.cpp
+CMakeFiles/readme.dir/main.cpp.o: pic/measure.h
 CMakeFiles/readme.dir/main.cpp.o: str/segmentation.h
 CMakeFiles/readme.dir/main.cpp.o: /usr/local/include/glog/log_severity.h
 CMakeFiles/readme.dir/main.cpp.o: /usr/local/include/glog/logging.h
 CMakeFiles/readme.dir/main.cpp.o: /usr/local/include/glog/vlog_is_on.h
+CMakeFiles/readme.dir/main.cpp.o: /usr/local/include/opencv/cv.h
 CMakeFiles/readme.dir/main.cpp.o: /usr/local/include/opencv/cxcore.h
+CMakeFiles/readme.dir/main.cpp.o: /usr/local/include/opencv/highgui.h
 CMakeFiles/readme.dir/main.cpp.o: /usr/local/include/opencv2/calib3d.hpp
 CMakeFiles/readme.dir/main.cpp.o: /usr/local/include/opencv2/calib3d/calib3d_c.h
 CMakeFiles/readme.dir/main.cpp.o: /usr/local/include/opencv2/core.hpp
