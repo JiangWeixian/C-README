@@ -28,3 +28,8 @@ Get a tip about str.split, [url](http://www.cnblogs.com/dfcao/p/cpp-FAQ-split.ht
 add `glog` support into  `cmakelist`.
 
 * in `log`&`cmake` - **created** those config folder.
+
+### 7-27
+
+* in `video/camera.h` - **created** this folder and file, **add** `local_cap()`
+* in `pic/mesure.h` - **created** this folder and file, **add** `ssim()`

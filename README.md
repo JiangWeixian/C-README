@@ -20,6 +20,14 @@ some str handle funcs!
 
 Glog will log info/erro etc... into this dir.
 
+## video
+
+some funcs about video/camera
+
+## pic
+
+some funcs about image
+
 ## cmake
 
 fork form `caffe` try to find glog in this machine
