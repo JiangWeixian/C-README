@@ -19,12 +19,12 @@ using namespace cv;
  * calculate two imgs' ssim similarity
  *
  * @Params:
- * - img_pathA/img_pathB: two imgs pathname, string type
+ * - imageA/imageB: two imgs(Mat type), come from imread(imagePath)
  *
  * @Return:
  * the mean of ssim of 3 channels
  */
-double ssim(string img_pathA, string img_pathB){
+double ssim(Mat imageA, Mat imageB){
     double C1 = 6.5025, C2 = 58.5225;
     IplImage
             *img1=NULL, *img2=NULL, *img1_img2=NULL,
@@ -34,8 +34,8 @@ double ssim(string img_pathA, string img_pathB){
             *mu1_sq=NULL, *mu2_sq=NULL, *mu1_mu2=NULL,
             *sigma1_sq=NULL, *sigma2_sq=NULL, *sigma12=NULL,
             *ssim_map=NULL, *temp1=NULL, *temp2=NULL, *temp3=NULL;
-    img1_temp = cvLoadImage("/home/eric/CLionProjects/readme/README/python-compare-a.jpg");
-    img2_temp = cvLoadImage("/home/eric/CLionProjects/readme/README/python-compare-a.jpg");
+    img1_temp = cvCreateImage(cvSize(imageA.cols, imageA.rows), IPL_DEPTH_32F, imageA.channels());
+    img2_temp = cvCreateImage(cvSize(imageB.cols, imageB.rows), IPL_DEPTH_32F, imageB.channels());
     if(img1_temp==NULL || img2_temp==NULL)
         return -1;
     int x=img1_temp->width, y=img1_temp->height;

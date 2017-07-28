@@ -114,8 +114,11 @@ int test_ssim() {
             *mu1_sq=NULL, *mu2_sq=NULL, *mu1_mu2=NULL,
             *sigma1_sq=NULL, *sigma2_sq=NULL, *sigma12=NULL,
             *ssim_map=NULL, *temp1=NULL, *temp2=NULL, *temp3=NULL;
-    img1_temp = cvLoadImage("/home/eric/CLionProjects/readme/README/python-compare-a.jpg");
-    img2_temp = cvLoadImage("/home/eric/CLionProjects/readme/README/python-compare-a.jpg");
+    Mat imageA, imageB;
+    imageA = imread("/home/eric/CLionProjects/readme/README/python-compare-a.jpg");
+    imageB = imread("/home/eric/CLionProjects/readme/README/python-compare-b.jpg");
+    img1_temp = cvCreateImage(cvSize(imageA.cols, imageA.rows), IPL_DEPTH_32F, imageA.channels());
+    img2_temp = cvCreateImage(cvSize(imageB.cols, imageB.rows), IPL_DEPTH_32F, imageB.channels());
     if(img1_temp==NULL || img2_temp==NULL)
         return -1;
     int x=img1_temp->width, y=img1_temp->height;
@@ -221,6 +224,22 @@ int test_ssim() {
     return 0;
 }
 
+void test_cvload(){
+    IplImage *img1_temp = NULL, *img2_temp = NULL;
+    img1_temp = cvLoadImage("/home/eric/CLionProjects/readme/README/python-compare-a.jpg");
+    img2_temp = cvLoadImage("/home/eric/CLionProjects/readme/README/python-compare-a.jpg");
+}
+
+void test_crop(){
+    Mat imageA, imageB;
+    Mat roi_imageA, roi_imageB;
+    imageA = imread("/home/eric/CLionProjects/readme/README/python-compare-a.jpg");
+    imageB = imread("/home/eric/CLionProjects/readme/README/python-compare-b.jpg");
+    roi_imageA = Mat(imageA, Rect(0, 0, 1080, 100));
+    imshow("A_CROP", roi_imageA);
+    imshow("ORIGIN", imageA);
+    waitKey(0);
+}
 
 int main(int argc, char* argv[]) {
     FLAGS_log_dir = "/home/eric/CLionProjects/readme/log";
@@ -231,7 +250,9 @@ int main(int argc, char* argv[]) {
     //test_read_img();
     //test_mutil_video();
     //test_local_camera();
-    //test_ssim();
-    LOG(INFO) << ssim("/home/eric/CLionProjects/readme/README/python-compare-a.jpg", "/home/eric/CLionProjects/readme/README/python-compare-a.jpg");
+    test_ssim();
+    //LOG(INFO) << ssim(imread("/home/eric/CLionProjects/readme/README/python-compare-a.jpg"), imread("/home/eric/CLionProjects/readme/README/python-compare-a.jpg"));
+    //test_cvload();
+    //test_crop();
     return 0;
 }
