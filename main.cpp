@@ -6,13 +6,17 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <stdlib.h>
 #include "./rect/calculate.h"
 #include "./rect/read.h"
+#include "./rect/util.h"
 #include "str/segmentation.h"
 #include "pic/measure.h"
 
 using namespace cv;
 using namespace std;
+
+#define GET_ARRAY_LEN(array, len){len[0] = (sizeof(array) / sizeof(array[0]));}
 
 void test_per() {
     vector<string> mps = read("/home/eric/CLionProjects/readme/README/compile-jpg.txt");
@@ -235,10 +239,45 @@ void test_crop(){
     Mat roi_imageA, roi_imageB;
     imageA = imread("/home/eric/CLionProjects/readme/README/python-compare-a.jpg");
     imageB = imread("/home/eric/CLionProjects/readme/README/python-compare-b.jpg");
-    roi_imageA = Mat(imageA, Rect(0, 0, 1080, 100));
-    imshow("A_CROP", roi_imageA);
-    imshow("ORIGIN", imageA);
+    cout << ssim(imageA, imageB);
+//    roi_imageA = Mat(imageA, Rect(0, 0, 1080, 100));
+//    imshow("A_CROP", roi_imageA);
+//    imshow("ORIGIN", imageA);
     waitKey(0);
+}
+
+void test_crop_file(){
+    vector<string> mps = read("/home/eric/CLionProjects/readme/README/crop-compare.txt");
+    Mat imageA = imread("/home/eric/CLionProjects/readme/README/python-compare-a.jpg");
+    Mat imageB = imread("/home/eric/CLionProjects/readme/README/python-compare-a.jpg");
+    int crop[mps.size()][4];
+    for (int index = 0; index < mps.size(); ++index) {
+        vector<string> split_result;
+        SplitString(mps[index], split_result, ";");
+        vector<string> coorlt;
+        SplitString(split_result[0], coorlt, " ");
+        crop[index][0] = atoi(coorlt[0].c_str());
+        crop[index][1] = atoi(coorlt[1].c_str());
+        vector<string> coorbr;
+        SplitString(split_result[1], coorbr, " ");
+        crop[index][2] = atoi(coorbr[0].c_str()) - atoi(coorlt[0].c_str());
+        crop[index][3] = atoi(coorbr[1].c_str()) - atoi(coorlt[1].c_str());
+    }
+    vector<Mat> crop_imageAs, crop_imageBs;
+    int len = sizeof(crop) / sizeof(crop[0]);
+    for (int crop_size = 0; crop_size < len; ++crop_size) {
+        Mat roiA, roiB;
+        roiA = Mat(imageA, Rect(crop[crop_size][0], crop[crop_size][1], crop[crop_size][2], crop[crop_size][3]));
+        roiB = Mat(imageB, Rect(crop[crop_size][0], crop[crop_size][1], crop[crop_size][2], crop[crop_size][3]));
+        crop_imageAs.push_back(roiA);
+        crop_imageBs.push_back(roiB);
+    }
+    cout << ssim(crop_imageAs[1], crop_imageBs[1]);
+}
+
+void test_string2cvpoint() {
+    vector<string> mps_rect = read("/home/eric/CLionProjects/readme/README/crop-compare.txt");
+    vector<vector<Point>> rect = string2cvPoint(mps_rect);
 }
 
 int main(int argc, char* argv[]) {
@@ -250,9 +289,11 @@ int main(int argc, char* argv[]) {
     //test_read_img();
     //test_mutil_video();
     //test_local_camera();
-    test_ssim();
+    //test_ssim();
     //LOG(INFO) << ssim(imread("/home/eric/CLionProjects/readme/README/python-compare-a.jpg"), imread("/home/eric/CLionProjects/readme/README/python-compare-a.jpg"));
     //test_cvload();
     //test_crop();
+    //test_crop_file();
+    test_string2cvpoint();
     return 0;
 }

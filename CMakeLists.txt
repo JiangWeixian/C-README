@@ -8,6 +8,6 @@ find_package (Glog REQUIRED)
 find_package (OpenCV REQUIRED)
 include_directories (BEFORE ${GLOG_INCLUDE_DIR} ${OpenCV_LIBS})
 
-set(SOURCE_FILES main.cpp str/segmentation.h video/camera.h pic/measure.h)
+set(SOURCE_FILES main.cpp str/segmentation.h video/camera.h pic/measure.h util/arr.h)
 add_executable(readme ${SOURCE_FILES})
 target_link_libraries (readme glog ${OpenCV_LIBS})

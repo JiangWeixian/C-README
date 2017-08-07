@@ -1,11 +1,24 @@
-# C/C++ learning
-> record `tips` like learningopencv
+<div align="center" markdown="1">
+     <img style="max-width: 70%" src="/README/c++.png"/>
+     <p>Collect c/c++ examples&tips from internet or myself</p>
+</div>
 
-## Pre
+<div align="center">
+
+[![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)
+[![forthebadge](http://forthebadge.com/images/badges/winter-is-coming.svg)](http://forthebadge.com)
+
+</div>
+
+## INTRODUCTION
 
 * platform: `linux`
 * ide: `clion`
-* note: if you fork it, the folder name should rename into **readme**, such as `xxx/C-README` rename into `xxx/readme`
+
+**note: if you fork it, the folder name should rename into **readme**, such as `xxx/C-README` rename into `xxx/readme`**
+
+### TIPS
+
 * **glog lib**: there are levels(FATAL, ERROR, WARNING, and INFO), already **add** gflags. 
 
 ## rect
